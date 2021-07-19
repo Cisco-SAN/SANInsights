@@ -49,11 +49,6 @@ match_all = {
     }
 }
 
-try:
-    es = Elasticsearch(['localhost:9200'], timeout = 10000)
-except Exception as e:
-    print('Connection to Elastcisearch python client failed due to err : ', e)
-
 def hex2dec(hex_string):
     hex_string = hex_string.partition('x')[2]
     base = 16
@@ -657,7 +652,7 @@ def main(argv):
             if len(data):
                 write_to_csv_file(filename, data)
                 if VERBOSE :
-                    print('\nSLOWDRAINCOUNTER DATA : Total docs = {} Time Taken = {} seconds \n', len(data), end-start)
+                    print('\nSLOWDRAINCOUNTER DATA : Total docs = {} Time Taken = {} seconds \n'.format(len(data), end-start))
                     print('Data saved to file : ', filename)
 
                 if REMOTE:
@@ -680,6 +675,7 @@ def main(argv):
     # Fetching data from pmdb_sanportratedata. Can be a large index, hence following all safety checks.
     if index_to_fetch['sanportrate']:
         if pmdb_sanportratedata:
+            start = time.time()
             index = 'pmdb_sanportratedata'
             filename = index + '_fetched_data.csv'
             print('Collecting data for index : ', index)
@@ -711,9 +707,10 @@ def main(argv):
                 sub_total_doc += len(data)
                 data.clear()
 
+            end = time.time()
             if sub_total_doc:
                 if VERBOSE :
-                    print('\nSANPORTRATE DATA : Total docs = {} Time Taken = {} seconds \n', sub_total_doc, end-start)
+                    print('\nSANPORTRATE DATA : Total docs = {} Time Taken = {} seconds \n'.format(sub_total_doc, end-start))
                     print('Data saved to file : ', filename)
 
                 if REMOTE:
@@ -967,4 +964,18 @@ def main(argv):
             print(key, ' '*(30-len(key)), '-->', ' '*10 , value)
     
 if __name__ == "__main__":
+    try:
+        es = Elasticsearch(['localhost:9200'], timeout = 1000000)
+        while not es.ping():
+            print('''
+        Looks like Elasticsearch is not running on the default port, ie. 9200.
+        Please check the port using the below cli (run as root user) : 
+        docker service ls | grep dcnmelastic
+        ''')
+            es_port = input('Please enter the Elasticsearch port : ')
+            es = Elasticsearch(['localhost:{}'.format(es_port)], timeout = 1000000)
+
+        print("Connection to dcnmelastic successful.")
+    except Exception as e:
+        print('Connection to Elastcisearch python client failed due to err : ', e)
     main(sys.argv[1:])
