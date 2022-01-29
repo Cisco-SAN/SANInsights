@@ -1,0 +1,57 @@
+{
+  "settings": {
+      "number_of_shards": "2",
+      "number_of_replicas": "1",
+      "refresh_interval": "30s",
+      "codec": "best_compression"
+  },
+  "mappings": {
+      "properties": {
+          "ifIndex": {
+            "type": "keyword"
+          },
+          "ifName": {
+            "type": "keyword"
+          },
+          "inDiscard": {
+            "type": "double"
+          },
+          "inError": {
+            "type": "double"
+          },
+          "ipAddress": {
+            "type": "keyword"
+          },
+          "outDiscard": {
+            "type": "double"
+          },
+          "outError": {
+            "type": "double"
+          },
+          "rx": {
+            "type": "double"
+          },
+          "rxUsage": {
+            "type": "integer"
+          },
+          "switchName": {
+            "type": "keyword"
+          },
+          "timestamp": {
+            "type": "date"
+          },
+          "tx": {
+            "type": "double"
+          },
+          "txUsage": {
+            "type": "integer"
+          },
+          "type": {
+            "type": "integer"
+          },
+          "wwn": {
+            "type": "keyword"
+        }
+      }
+    }
+}

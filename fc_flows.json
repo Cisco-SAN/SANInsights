@@ -1,0 +1,160 @@
+{
+  "settings": {
+      "number_of_shards": "2",
+      "number_of_replicas": "1",
+      "refresh_interval": "30s",
+      "codec": "best_compression"
+  },
+  "mappings": {
+      "properties": {
+        "did": {
+          "type": "long"
+        },
+        "fid": {
+          "type": "integer"
+        },
+        "fname": {
+          "type": "keyword"
+        },
+        "id": {
+          "type": "long"
+        },
+        "lun": {
+          "type": "keyword"
+        },
+        "port": {
+          "type": "keyword"
+        },
+        "rIOTo": {
+          "type": "long"
+        },
+        "rIOa": {
+          "type": "long"
+        },
+        "rIOb": {
+          "type": "long"
+        },
+        "rIObw": {
+          "type": "long"
+        },
+        "rIOctMa": {
+          "type": "long"
+        },
+        "rIOctMi": {
+          "type": "long"
+        },
+        "rIOf": {
+          "type": "long"
+        },
+        "rIOint": {
+          "type": "long"
+        },
+        "rIOitMa": {
+          "type": "long"
+        },
+        "rIOr": {
+          "type": "long"
+        },
+        "rIOsMa": {
+          "type": "long"
+        },
+        "rIOsMi": {
+          "type": "long"
+        },
+        "rIOt": {
+          "type": "long"
+        },
+        "raIO": {
+          "type": "long"
+        },
+        "resL1": {
+          "type": "long"
+        },
+        "resS1": {
+          "type": "keyword"
+        },
+        "resS2": {
+          "type": "keyword"
+        },
+        "rtIO": {
+          "type": "long"
+        },
+        "samEtm": {
+          "type": "long"
+        },
+        "samStm": {
+          "type": "long"
+        },
+        "sid": {
+          "type": "long"
+        },
+        "swIP": {
+          "type": "keyword"
+        },
+        "timestamp": {
+          "type": "date",
+          "format": "yyyy-MM-dd HH:mm:ss z||yyyy-MM-dd||epoch_millis||yyyy-MM-dd HH:mm:ss.SSS z"
+        },
+        "tmrtIOb": {
+          "type": "long"
+        },
+        "tmrtIOc": {
+          "type": "long"
+        },
+        "tmwtIOb": {
+          "type": "long"
+        },
+        "tmwtIOc": {
+          "type": "long"
+        },
+        "vsan": {
+          "type": "integer"
+        },
+        "wIOTo": {
+          "type": "long"
+        },
+        "wIOa": {
+          "type": "long"
+        },
+        "wIOb": {
+          "type": "long"
+        },
+        "wIObw": {
+          "type": "long"
+        },
+        "wIOctMa": {
+          "type": "long"
+        },
+        "wIOctMi": {
+          "type": "long"
+        },
+        "wIOf": {
+          "type": "long"
+        },
+        "wIOint": {
+          "type": "long"
+        },
+        "wIOitMa": {
+          "type": "long"
+        },
+        "wIOr": {
+          "type": "long"
+        },
+        "wIOsMa": {
+          "type": "long"
+        },
+        "wIOsMi": {
+          "type": "long"
+        },
+        "wIOt": {
+          "type": "long"
+        },
+        "waIO": {
+          "type": "long"
+        },
+        "wtIO": {
+          "type": "long"
+        }
+      }
+    }
+}

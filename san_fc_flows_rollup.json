@@ -1,0 +1,268 @@
+{
+  "settings": {
+      "number_of_shards": "2",
+      "number_of_replicas": "1",
+      "refresh_interval": "30s",
+      "codec": "best_compression"
+  },
+  "mappings": {
+      "properties": {
+        "arDAL": {
+          "type": "float"
+        },
+        "arECT": {
+          "type": "float"
+        },
+        "arThru": {
+          "type": "float"
+        },
+        "awDAL": {
+          "type": "float"
+        },
+        "awECT": {
+          "type": "float"
+        },
+        "awThru": {
+          "type": "float"
+        },
+        "did": {
+          "type": "long"
+        },
+        "fid": {
+          "type": "integer"
+        },
+        "fname": {
+          "type": "keyword"
+        },
+        "iAlias": {
+          "type": "text",
+          "fields": {
+            "raw": {
+              "type": "keyword"
+            }
+          }
+        },
+        "iEnc": {
+          "type": "text",
+          "fields": {
+            "raw": {
+              "type": "keyword"
+            }
+          }
+        },
+        "iWWN": {
+          "type": "text",
+          "fields": {
+            "raw": {
+              "type": "keyword"
+            }
+          }
+        },
+        "id": {
+          "type": "long"
+        },
+        "itl": {
+          "type": "keyword"
+        },
+        "lun": {
+          "type": "keyword"
+        },
+        "nrDAL": {
+          "type": "float"
+        },
+        "nrECT": {
+          "type": "float"
+        },
+        "nrIOP": {
+          "type": "float"
+        },
+        "nrIOS": {
+          "type": "float"
+        },
+        "nwDAL": {
+          "type": "float"
+        },
+        "nwECT": {
+          "type": "float"
+        },
+        "nwIOP": {
+          "type": "float"
+        },
+        "nwIOS": {
+          "type": "float"
+        },
+        "port": {
+          "type": "keyword"
+        },
+        "rECTDev": {
+          "type": "float"
+        },
+        "rECTbl": {
+          "type": "float"
+        },
+        "rECTst": {
+          "type": "keyword"
+        },
+        "rIOTo": {
+          "type": "long"
+        },
+        "rIOa": {
+          "type": "long"
+        },
+        "rIOb": {
+          "type": "long"
+        },
+        "rIObw": {
+          "type": "long"
+        },
+        "rIOctMa": {
+          "type": "long"
+        },
+        "rIOctMi": {
+          "type": "long"
+        },
+        "rIOf": {
+          "type": "long"
+        },
+        "rIOint": {
+          "type": "long"
+        },
+        "rIOitMa": {
+          "type": "long"
+        },
+        "rIOr": {
+          "type": "long"
+        },
+        "rIOsMa": {
+          "type": "long"
+        },
+        "rIOsMi": {
+          "type": "long"
+        },
+        "rIOt": {
+          "type": "long"
+        },
+        "raIO": {
+          "type": "long"
+        },
+        "resL1": {
+          "type": "long"
+        },
+        "resS1": {
+          "type": "keyword"
+        },
+        "resS2": {
+          "type": "keyword"
+        },
+        "rtIO": {
+          "type": "long"
+        },
+        "sid": {
+          "type": "long"
+        },
+        "swIP": {
+          "type": "keyword"
+        },
+        "swName": {
+          "type": "keyword"
+        },
+        "tAlias": {
+          "type": "text",
+          "fields": {
+            "raw": {
+              "type": "keyword"
+            }
+          }
+        },
+        "tEnc": {
+          "type": "text",
+          "fields": {
+            "raw": {
+              "type": "keyword"
+            }
+          }
+        },
+        "tWWN": {
+          "type": "text",
+          "fields": {
+            "raw": {
+              "type": "keyword"
+            }
+          }
+        },
+        "timestamp": {
+          "type": "date",
+          "format": "yyyy-MM-dd HH:mm:ss z||yyyy-MM-dd||epoch_millis||yyyy-MM-dd HH:mm:ss.SSS z"
+        },
+        "tmrtIOb": {
+          "type": "long"
+        },
+        "tmrtIOc": {
+          "type": "long"
+        },
+        "tmwtIOb": {
+          "type": "long"
+        },
+        "tmwtIOc": {
+          "type": "long"
+        },
+        "vsan": {
+          "type": "integer"
+        },
+        "wECTDev": {
+          "type": "float"
+        },
+        "wECTbl": {
+          "type": "float"
+        },
+        "wECTst": {
+          "type": "keyword"
+        },
+        "wIOTo": {
+          "type": "long"
+        },
+        "wIOa": {
+          "type": "long"
+        },
+        "wIOb": {
+          "type": "long"
+        },
+        "wIObw": {
+          "type": "long"
+        },
+        "wIOctMa": {
+          "type": "long"
+        },
+        "wIOctMi": {
+          "type": "long"
+        },
+        "wIOf": {
+          "type": "long"
+        },
+        "wIOint": {
+          "type": "long"
+        },
+        "wIOitMa": {
+          "type": "long"
+        },
+        "wIOr": {
+          "type": "long"
+        },
+        "wIOsMa": {
+          "type": "long"
+        },
+        "wIOsMi": {
+          "type": "long"
+        },
+        "wIOt": {
+          "type": "long"
+        },
+        "waIO": {
+          "type": "long"
+        },
+        "wtIO": {
+          "type": "long"
+        }
+      }
+    }
+}

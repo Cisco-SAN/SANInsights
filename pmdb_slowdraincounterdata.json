@@ -1,0 +1,60 @@
+{
+  "settings": {
+      "number_of_shards": "2",
+      "number_of_replicas": "1",
+      "refresh_interval": "30s",
+      "codec": "best_compression"
+  },
+  "mappings": {
+      "properties": {
+          "fId": {
+            "type": "integer"
+          },
+          "fcHCIfBBCreditTransistionFromZero": {
+            "type": "double"
+          },
+          "fcIfBBCreditTransistionToZero": {
+            "type": "double"
+          },
+          "fcIfCreditLoss": {
+            "type": "double"
+          },
+          "fcIfLinkResetOut": {
+            "type": "double"
+          },
+          "fcIfOutDiscards": {
+            "type": "double"
+          },
+          "fcIfTimeOutDiscards": {
+            "type": "double"
+          },
+          "fcIfTxWaitCount": {
+            "type": "double"
+          },
+          "fcIfTxWaitCountInSec": {
+            "type": "double"
+          },
+          "fcIfTxWtAvgBBCreditTransitionToZero": {
+            "type": "double"
+          },
+          "fcIflinkResetIn": {
+            "type": "double"
+          },
+          "ifIndex": {
+            "type": "keyword"
+          },
+          "ifName": {
+            "type": "keyword"
+          },
+          "swDbId": {
+            "type": "long"
+          },
+          "swName": {
+            "type": "keyword"
+          },
+          "timestamp": {
+            "type": "date"
+        }
+      }
+    }
+}
