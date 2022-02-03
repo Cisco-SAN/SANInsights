@@ -13,6 +13,14 @@ The data extraction process can be time consuming when there are a large number 
 
 After the script has run successfully, the .csv files generated will be compressed and moved to a SAN_Insights-<Timestamp> folder. A copy of the .csv.gz files from this folder can then be handed over to your Cisco representative. Cisco will use this data for statistical analysis of the metrics in an anonymised manner which would help build algorithms to better solve real world storage performance problems. The analysis can also be shared on request.
 
+Pre-requisites for running the script:
+1) Execute the below command to extract the files
+tar -zxf wheelhouse.tar.gz
+
+2) Execute the below command to install the required libs and their dependencies
+pip3 install -r wheelhouse/requirements.txt --no-index --find-links wheelhouse
+
+
 Usage: python3 si_fetch_data.py
 --dcnm <dcnm ip>
 --swip <switch_ip> 
