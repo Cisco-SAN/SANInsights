@@ -82,45 +82,48 @@ def print_support_msg():
 
     If issue still persists, please contact your Cisco representative.
     ''')
-try:
-    from elasticsearch import Elasticsearch, helpers
-except ImportError:
-    print("elasticsearch python packages is missing !")
-    try:
-        if is_root_user():
-            print("Running as root user, trying to install python package ...")
-        else:
-            print("Trying to install python package without root permissions ...")
-        install_python_package('elasticsearch')
-    except Exception as err:
-        print('Exception while installing python package, err = ', err)
-        sys.exit()
-finally:
-    try:
-        from elasticsearch import Elasticsearch, helpers
-    except ImportError:
-        print_support_msg()
-        sys.exit()
+# try:
+#     from elasticsearch import Elasticsearch, helpers
+# except ImportError:
+#     print("elasticsearch python packages is missing !")
+#     try:
+#         if is_root_user():
+#             print("Running as root user, trying to install python package ...")
+#         else:
+#             print("Trying to install python package without root permissions ...")
+#         install_python_package('elasticsearch')
+#     except Exception as err:
+#         print('Exception while installing python package, err = ', err)
+#         sys.exit()
+# finally:
+#     try:
+#         from elasticsearch import Elasticsearch, helpers
+#     except ImportError:
+#         print_support_msg()
+#         sys.exit()
 
-try:
-    import tqdm
-except ImportError:
-    print("tqdm python packages is missing !")
-    try:
-        if is_root_user():
-            print("Running as root user, trying to install python package ...")
-        else:
-            print("Trying to install python package without root permissions ...")
-        install_python_package('tqdm')
-    except Exception as err:
-        print('Exception while installing python package, err = ', err)
-        sys.exit()
-finally:
-    try:
-        import tqdm
-    except ImportError:
-        print_support_msg()
-        sys.exit()
+# try:
+#     import tqdm
+# except ImportError:
+#     print("tqdm python packages is missing !")
+#     try:
+#         if is_root_user():
+#             print("Running as root user, trying to install python package ...")
+#         else:
+#             print("Trying to install python package without root permissions ...")
+#         install_python_package('tqdm')
+#     except Exception as err:
+#         print('Exception while installing python package, err = ', err)
+#         sys.exit()
+# finally:
+#     try:
+#         import tqdm
+#     except ImportError:
+#         print_support_msg()
+#         sys.exit()
+
+from elasticsearch import Elasticsearch, helpers
+import tqdm
 
 warnings.filterwarnings('ignore')
 
