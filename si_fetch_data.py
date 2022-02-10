@@ -43,45 +43,45 @@ except:
     pass
 
 # Function definitions
-def is_root_user():
-    cmd = 'id -u'
-    proc = run(cmd.split(), stdout=PIPE, stderr=STDOUT)
-    output = proc.stdout.decode('utf-8').strip()
-    if output == '0':
-        return True
-    return False
+# def is_root_user():
+#     cmd = 'id -u'
+#     proc = run(cmd.split(), stdout=PIPE, stderr=STDOUT)
+#     output = proc.stdout.decode('utf-8').strip()
+#     if output == '0':
+#         return True
+#     return False
 
-def install_python_package(package):
-    INDEX_URL = "https://pypi.org/simple"
-    print("Installing python package : {}".format(package))
+# def install_python_package(package):
+#     INDEX_URL = "https://pypi.org/simple"
+#     print("Installing python package : {}".format(package))
 
-    # Commenting this logic for now.
-    # print('''
-    # It is RECOMMENDED that you specify index-url if your server does not have connectivity to pypi.org !
-    # Current lookup index for python package search is : 'https://pypi.org/simple' (DEFAULT)
-    # ''')
-    # user_input = input("Do you want to change the index url for lookup? Y/N : ")
-    # if user_input.lower() == 'y':
-    #     INDEX_URL = input("Please specify the index-url : ")
+#     # Commenting this logic for now.
+#     # print('''
+#     # It is RECOMMENDED that you specify index-url if your server does not have connectivity to pypi.org !
+#     # Current lookup index for python package search is : 'https://pypi.org/simple' (DEFAULT)
+#     # ''')
+#     # user_input = input("Do you want to change the index url for lookup? Y/N : ")
+#     # if user_input.lower() == 'y':
+#     #     INDEX_URL = input("Please specify the index-url : ")
 
-    check_call([sys.executable, "-m", "pip", "install", package, "--retries", "1", "--index-url", INDEX_URL])
+#     check_call([sys.executable, "-m", "pip", "install", package, "--retries", "1", "--index-url", INDEX_URL])
 
-def print_support_msg():
-    print("Python packages could not be installed internally!")
-    print('''
-    Try one of the below ways : 
-    1. Run the script as a root user.
-    2. Install using => "sudo pip install <package>". If installation is successful, re-run the script. 
-        It might fail due to insufficient write permissions.
-    3. Try giving index-url as an argument to pip if the server is unable to reach "https://pypi.org/simple".
-        If you organisation has a local artifactory to which this server can connect to, please provide it like in the example below.
-        Ex. pip install <package_name> --index_url <index_url>
-    4. Check if virtualenv is already present using cli "virtualenv --version". 
-        If yes, try creating a new Python virtual environment using virtualenv si_py.
-        Use the newly created python3 executable to run the script. You should not face any issue now.
+# def print_support_msg():
+#     print("Python packages could not be installed internally!")
+#     print('''
+#     Try one of the below ways : 
+#     1. Run the script as a root user.
+#     2. Install using => "sudo pip install <package>". If installation is successful, re-run the script. 
+#         It might fail due to insufficient write permissions.
+#     3. Try giving index-url as an argument to pip if the server is unable to reach "https://pypi.org/simple".
+#         If you organisation has a local artifactory to which this server can connect to, please provide it like in the example below.
+#         Ex. pip install <package_name> --index_url <index_url>
+#     4. Check if virtualenv is already present using cli "virtualenv --version". 
+#         If yes, try creating a new Python virtual environment using virtualenv si_py.
+#         Use the newly created python3 executable to run the script. You should not face any issue now.
 
-    If issue still persists, please contact your Cisco representative.
-    ''')
+#     If issue still persists, please contact your Cisco representative.
+#     ''')
 # try:
 #     from elasticsearch import Elasticsearch, helpers
 # except ImportError:
@@ -263,7 +263,7 @@ def mproc_estimate(local_port, index, switchname, query, return_list):
     data = []
     for doc in resp:
         data.append(doc['_source'])
-        if len(data) == 10000:
+        if len(data) == 1000: # TODO: make it back to 10000
             break
     return_list.append(len(data))
 
