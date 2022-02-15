@@ -3,7 +3,7 @@ SAN Insights (SI) Data Fetch Script v2.0
 
 Script can be run on :
 1. Linux (verified on RHEL v7.9)
-2. MacOS (verified on MacOS Monterey v12.2.1)
+2. MacOS (verified on BigSur v11.6.3 onwards)
 
 DCNM Versions Supported : 11.x (Linux/ISO/OVA)
 

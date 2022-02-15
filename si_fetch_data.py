@@ -34,13 +34,13 @@ LOGFILE_NAME = 'si_fetch_data.log'
 logging.basicConfig(filename = LOGFILE_NAME, filemode='w', format='%(asctime)s - %(message)s', level=logging.ERROR)
 
 # Unsetting proxy
-try:
-    del os.environ['http_proxy']
-    del os.environ['https_proxy']
-    del os.environ['HTTP_PROXY']
-    del os.environ['HTTPS_PROXY']
-except:
-    pass
+# try:
+#     del os.environ['http_proxy']
+#     del os.environ['https_proxy']
+#     del os.environ['HTTP_PROXY']
+#     del os.environ['HTTPS_PROXY']
+# except:
+#     pass
 
 # Function definitions
 # def is_root_user():
