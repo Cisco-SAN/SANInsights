@@ -1,7 +1,9 @@
 SAN Insights (SI) Data Fetch Script v2.0
 ----------------------------------------
 
-*** Only supported for Linux Users ***
+Script can be run on :
+1. Linux (verified on RHEL v7.9)
+2. MacOS (verified on MacOS Monterey v12.2.1)
 
 DCNM Versions Supported : 11.x (Linux/ISO/OVA)
 
@@ -14,12 +16,27 @@ The data extraction process can be time consuming when there are a large number 
 After the script has run successfully, the .csv files generated will be compressed and moved to a SAN_Insights-<Timestamp> folder. A copy of the .csv.gz files from this folder can then be handed over to your Cisco representative. Cisco will use this data for statistical analysis of the metrics in an anonymised manner which would help build algorithms to better solve real world storage performance problems. The analysis can also be shared on request.
 
 Pre-requisites for running the script:
-1) Execute the below command to extract the files
+
+1) Check if required python packages are installed.
+pip3 --version
+pip 22.0.3 from /opt/anaconda3/lib/python3.8/site-packages/pip (python 3.8)
+
+If not latest, please upgrade to latest pip version
+pip3 install --upgrade pip
+
+pip3 list | grep -E 'elasticsearch|tqdm|certifi|urllib3'
+
+certifi                            2020.6.20
+elasticsearch                      7.17.0
+elasticsearch-async                6.2.0
+tqdm                               4.62.3
+urllib3                            1.26.8
+
+2) Execute the below command to extract the files
 tar -zxf wheelhouse.tar.gz
 
-2) Execute the below command to install the required libs and their dependencies
+3) Execute the below command to install the required libs and their dependencies
 pip3 install -r wheelhouse/requirements.txt --no-index --find-links wheelhouse
-
 
 Usage: python3 si_fetch_data.py
 --dcnm <dcnm ip>
