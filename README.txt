@@ -36,7 +36,7 @@ urllib3                            1.26.8
 tar -zxf wheelhouse.tar.gz
 
 3) Execute the below command to install the required libs and their dependencies
-pip3 install -r wheelhouse/requirements.txt --no-index --find-links wheelhouse
+pip3 install --force-reinstall -r wheelhouse/requirements.txt --no-index --find-links wheelhouse
 
 Usage: python3 si_fetch_data.py
 --dcnm <dcnm ip>
